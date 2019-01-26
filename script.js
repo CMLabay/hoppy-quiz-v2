@@ -71,8 +71,7 @@ function handleStartClick(){
 function handleSubmitClick(){
   $('.quiz').on('click', '#js-submit-btn', function(event){
     //check if answer is correct
-    let selected = $("input[type='radio']:checked").val;
-    checkAnswer(myQuestion[questionNum - 1], selected);
+    checkAnswer(myQuestion[questionNum - 1]);
     questionNum++;
   });
 }
@@ -100,15 +99,14 @@ function handleRestartClick(){
     renderQuestion(myQuestion[questionNum - 1]);
   });
 }
-function checkAnswer(currQuestion, sel){ 
+function checkAnswer(currQuestion){ 
   let yayOrNay = '';
-  if(sel == currQuestion.answer){
+  let selected = $("input[type='radio']:checked").val();
+  if(selected == currQuestion.answer){
     yayOrNay = '<h1>Woohoo! You know your stuff!</h1>';
     correct++;
   }
   else{
-    console.log(sel);
-    console.log(currQuestion.answer);
     yayOrNay = `<h1>Boo. Better luck next time.<h1>
       <p>The correct answer is: ${currQuestion.choices[currQuestion.answer - 1]}</p>`;
     incorrect++;
@@ -119,7 +117,7 @@ function checkAnswer(currQuestion, sel){
 
 //display the results after the user clicks through each question
 function displayResults(correct){
-  const results = `<p>You answered ${correct} correct<p>
+  const results = `<h2>You answered ${correct} correct<h2>
   <button id="js-restart-btn">Restart</button>`;
   $('.quiz').html(results);
 }
@@ -132,15 +130,15 @@ function renderQuestion(nextQuest){
       '<fieldset>'+
         '<h2>'+nextQuest.question+'<h2>' +
         '<input name="choice" type="radio" value="1" checked>'+nextQuest.choices[0]+'<br>'+
-        '<input name="choice" type="radio" value="1">'+nextQuest.choices[1]+'<br>'+
-        '<input name="choice" type="radio" value="1">'+nextQuest.choices[2]+'<br>'+
-        '<input name="choice" type="radio" value="1">'+nextQuest.choices[3]+'<br>'+
+        '<input name="choice" type="radio" value="2">'+nextQuest.choices[1]+'<br>'+
+        '<input name="choice" type="radio" value="3">'+nextQuest.choices[2]+'<br>'+
+        '<input name="choice" type="radio" value="4">'+nextQuest.choices[3]+'<br>'+
       '</fieldset>'+
       '<button class="submit" id="js-submit-btn">Submit</button>'+
-      '<div class="quiz-tracker">' +
+      '<section class="quiz-tracker">' +
         '<p>Question '+questionNum+' out of 10</p>'+
         '<p>Correct: '+ correct+' Incorrect: '+incorrect+
-      '</div>'+
+      '</section>'+
     '</form>';
     $('.quiz').html(currentQuestion);
 };
