@@ -1,0 +1,21 @@
+body *{
+    box-sizing:border-box;
+  }
+  h2{
+    text-align:center;
+  }
+  .quizBegin{
+    text-align:center;
+  }
+  .quiz{
+    text-align:center;
+  }
+  button{
+    font-size:30px;
+  }
+  .quiz-tracker p{
+      text-align:left;
+  }
+  .submit{
+      margin: 20px;
+  }
