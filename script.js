@@ -128,21 +128,27 @@ function displayResults(correct){
 function renderQuestion(nextQuest){
   console.log('inside render question');
   const currentQuestion =
-    '<form class="question-form">' +
-      '<h2>'+nextQuest.question+'<h2>' +
-      '<fieldset>'+
-        
-        '<input name="choice" class="form-radio" type="radio" value="1" checked>'+nextQuest.choices[0]+'<br>'+
-        '<input name="choice" class="form-radio" type="radio" value="2">'+nextQuest.choices[1]+'<br>'+
-        '<input name="choice" class="form-radio" type="radio" value="3">'+nextQuest.choices[2]+'<br>'+
-        '<input name="choice" class="form-radio" type="radio" value="4">'+nextQuest.choices[3]+'<br>'+
-      '</fieldset>'+
-      '<button class="submit" id="js-submit-btn">Submit</button>'+
-      '<section class="quiz-tracker">' +
-        '<p class="progress">Question '+questionNum+' out of 10</p>'+
-        '<p class="score">Correct: '+ correct+' Incorrect: '+incorrect+
-      '</section>'+
-    '</form>';
+    `<form class="question-form">
+      <h2>${nextQuest.question}<h2>
+      <fieldset>
+        <label>
+          <input name="choice" class="form-radio" type="radio" value="1" checked>${nextQuest.choices[0]}<br>
+        <label>
+          <input name="choice" class="form-radio" type="radio" value="2">${nextQuest.choices[1]}<br>
+        </label>
+        <label>
+          <input name="choice" class="form-radio" type="radio" value="3">${nextQuest.choices[2]}<br>
+        </label>
+        <label>
+          <input name="choice" class="form-radio" type="radio" value="4">${nextQuest.choices[3]}<br>
+        </label>
+      </fieldset>
+      <button class="submit" id="js-submit-btn">Submit</button>
+      <section class="quiz-tracker">
+        <p class="progress">Question ${questionNum} out of 10</p>
+        <p class="score">Correct: ${correct} Incorrect: ${incorrect}</p>
+      </section>
+    </form>`;
     $('.quiz').html(currentQuestion);
 };
 
