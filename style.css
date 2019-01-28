@@ -36,10 +36,17 @@ body *{
     background-color:#001A57;
     color:white;
   }
+  button:hover{
+    cursor: pointer;
+  }
   .quiz-tracker{
     text-align:left;
   }
-
+  legend{
+    font-size:25px;
+    font-weight: 550;
+    text-align:center;
+  }
   .submit{
     margin: 20px;
   }
@@ -66,7 +73,7 @@ body *{
     padding: 10px;
   }
 
-    @media screen and (min-width: 320px){
+  @media screen and (min-width: 320px){
     .quiz input{
       margin-left:15%;
     }
