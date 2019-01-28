@@ -6,54 +6,54 @@ let incorrect = 0;
 //this will hold all of the questions
 const myQuestion = [
   {
-    question: 'This is the first question',
-    choices: ['ans 1', 'ans 2', 'ans 3', 'ans 4'],
+    question: 'What are the 4 ingredients of beer?',
+    choices: ['Hops, water, grains, yeast', 'Hops, water, malt, yeast', 'Hops, water, grains, malt', 'Hops, grains, malt, yeast'],
     answer: 1
   },
   {
-    question:'This is the second question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
+    question:'What does the term IPA stand for?',
+    choices: ['Imperial Pale Ale', 'India’s Preferred Ale', 'Imperial Preferred Ale', 'India Pale Ale'],
+    answer: 4
+  },
+  {
+    question:'What ancient civilization is credited with discovering beer?',
+    choices: ['Babylon', 'Egypt', 'Mesopotamia', 'Harappan'],
     answer: 3
   },
   {
-    question:'This is the third question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
+    question:'Which gas gives beer its fizziness?',
+    choices: ['Carbon Dioxide', 'Nitrogen', 'Either carbon dioxide or nitrogen', 'Who actually knows this?'],
     answer: 3
   },
   {
-    question:'This is the fourth question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
-    answer: 3
+    question:'What flavor profile is standard in a berlinerweisse style beer?',
+    choices: ['Sour', 'Bitter', 'Sweet', 'Spicy'],
+    answer: 1
   },
   {
-    question:'This is the fifth question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
-    answer: 3
+    question:'The head of a beer refers to ?',
+    choices: ['The bottle cap', 'The foam on top', 'The strength of the beer’s flavor', 'The color of the beer'],
+    answer: 2
   },
   {
-    question:'This is the sixth question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
-    answer: 3
+    question:'Fermentation of the beer is caused when yeast consumes what?',
+    choices: ['Water', 'Hops', 'Carbon dioxide', 'Sugar'],
+    answer: 4
   },
   {
-    question:'This is the seventh question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
-    answer: 3
+    question:'What style of beer is typically the darkest in color?',
+    choices: ['Barleywine', 'Berlinerweisse', 'Pilsner', 'Bock'],
+    answer: 1
   },
   {
-    question:'This is the eighth question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
-    answer: 3
+    question:'Brasserie Cantillon is a belgian brewery famous for brewing what style of beer?',
+    choices: ['Lager', 'Lambic', 'Stout', 'IPA'],
+    answer: 2
   },
   {
-    question:'This is the nineth question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
-    answer: 3
-  },
-  {
-    question:'This is the tenth question',
-    choices: ['ans a', 'ans b', 'ans c', 'ans d'],
-    answer: 3
+    question:'What is the oldest independent brewery in Texas?',
+    choices: ['Saint Arnold', 'Jester King', 'Real Ale', 'Spoetzl'],
+    answer: 1
   }
 
 ]
@@ -103,12 +103,14 @@ function checkAnswer(currQuestion){
   let yayOrNay = '';
   let selected = $("input[type='radio']:checked").val();
   if(selected == currQuestion.answer){
-    yayOrNay = '<h1>Woohoo! You know your stuff!</h1>';
+    yayOrNay = `<h1>Cheers! You know your stuff!</h1>
+    <img class='js-answer-img' src="Assets/Cheers.jpg" alt="two beers cheers"/>`;
     correct++;
   }
   else{
-    yayOrNay = `<h1>Boo. Better luck next time.<h1>
-      <p>The correct answer is: ${currQuestion.choices[currQuestion.answer - 1]}</p>`;
+    yayOrNay = `<h1>Boo. Better luck next time.</h1>
+      <p>The correct answer is: ${currQuestion.choices[currQuestion.answer - 1]}</p>
+      <img class="js-answer-img" src="Assets/ouch.jpg" alt="man who looks hurt" />`;
     incorrect++;
   }
   yayOrNay+='<button id="js-next-btn">Next</button>';
@@ -127,17 +129,18 @@ function renderQuestion(nextQuest){
   console.log('inside render question');
   const currentQuestion =
     '<form class="question-form">' +
+      '<h2>'+nextQuest.question+'<h2>' +
       '<fieldset>'+
-        '<h2>'+nextQuest.question+'<h2>' +
-        '<input name="choice" type="radio" value="1" checked>'+nextQuest.choices[0]+'<br>'+
-        '<input name="choice" type="radio" value="2">'+nextQuest.choices[1]+'<br>'+
-        '<input name="choice" type="radio" value="3">'+nextQuest.choices[2]+'<br>'+
-        '<input name="choice" type="radio" value="4">'+nextQuest.choices[3]+'<br>'+
+        
+        '<input name="choice" class="form-radio" type="radio" value="1" checked>'+nextQuest.choices[0]+'<br>'+
+        '<input name="choice" class="form-radio" type="radio" value="2">'+nextQuest.choices[1]+'<br>'+
+        '<input name="choice" class="form-radio" type="radio" value="3">'+nextQuest.choices[2]+'<br>'+
+        '<input name="choice" class="form-radio" type="radio" value="4">'+nextQuest.choices[3]+'<br>'+
       '</fieldset>'+
       '<button class="submit" id="js-submit-btn">Submit</button>'+
       '<section class="quiz-tracker">' +
-        '<p>Question '+questionNum+' out of 10</p>'+
-        '<p>Correct: '+ correct+' Incorrect: '+incorrect+
+        '<p class="progress">Question '+questionNum+' out of 10</p>'+
+        '<p class="score">Correct: '+ correct+' Incorrect: '+incorrect+
       '</section>'+
     '</form>';
     $('.quiz').html(currentQuestion);
@@ -151,3 +154,4 @@ function handleQuiz(){
 }
 //When the page load
 $(handleQuiz);
+
