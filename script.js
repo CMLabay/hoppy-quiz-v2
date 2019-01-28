@@ -129,8 +129,8 @@ function renderQuestion(nextQuest){
   console.log('inside render question');
   const currentQuestion =
     `<form class="question-form">
-      <h2>${nextQuest.question}<h2>
       <fieldset>
+        <legend>${nextQuest.question}</legend>
         <label>
           <input name="choice" class="form-radio" type="radio" value="1" checked>${nextQuest.choices[0]}<br>
         <label>
@@ -160,4 +160,3 @@ function handleQuiz(){
 }
 //When the page load
 $(handleQuiz);
-
