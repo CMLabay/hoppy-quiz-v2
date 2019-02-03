@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Hoppy Quiz!</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <h1>Hoppy Quiz!</h1>
-    </header>
-    <main role="main">
-      <section class="quizBegin">
-        <h2>Ready to test your beer knowledge?</h2>
-        <button id="js-start-btn" type="button">Let's do this!</button>
-      </section>
-    <section class="quiz"></section>
-    </main>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <head>
+        <title>Christina Labay - Portfolio</title>
+        <meta name="viewport" content="width-device-width, initial-scale-1">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href='//cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.css'>
+        <link href="https://fonts.googleapis.com/css?family=Abel|Vibur" rel="stylesheet">
+    </head>
+    <body>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#main">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact<a><li>
+        </ul>
+      </nav>
+      <main role="main" id="main">
+        <header role="banner">
+          <p class="greeting">hello.</p>
+          <img class="headshot" src="Assets/headshot.JPG" alt="head shot of christina"/>
+          <p class="headline">I’m Christina - an enthusiastic developer with a love for creating apps that make life a little more simple, and a lot more fun.</p>
+        </header>
+        <section class="bio" id="bio">
+          <p class="bio-text">I enjoy making apps that make people smile, whether it’s from humor, or because I solved a problem for them. My favorite part of development is the puzzle aspect. I enjoy the process of taking a seemingly impossible task, breaking it down into manageable pieces, and putting it all together in a new, exciting way. When I'm not developing, you can usually find me in the forest, taking in nature.</p>
+        </section>
+        <section class="projects" id="projects">
+          <p class="section-title">Projects</p>
+          <img class="project-img" src="Assets/quiz.png" alt="project screenshot"> 
+          <p class="project-text">I wanted to create a fun way to learn some facts about beer, and so I created the Hoppy Quiz app. Your score is kept and updated as you progress through each question, and you have the option to restart at the end. If you answer one wrong, the correct answer is given.<span>Technologies used: JavaScript, HTML, and CSS.</span>
+          </p> 
+          <a class="proj-link" href="https://github.com/shhmavel/hoppy-quiz-v2">Project Github</a>
+          <a class="proj-link" href=
+      "https://shhmavel.github.io/hoppy-quiz-v2/">Take the quiz</a>
+        </section>
+        <section class="contact" id="contact">
+          <p class="section-title contact-title">Contact</p>
+          <p class="contact-text"><a href="mailto:christina.m.labay@gmail.com">christina.m.labay@gmail.com</p>
+          <a href="https://github.com/shhmavel">
+            <img class="github" src="Assets/github.png" alt="github link">
+          </a>
+          <a href="https://www.linkedin.com/in/christina-labay-ab3542119">
+            <img class="linkedin" src="Assets/linkedin.png" alt="linkedin link">
+          </a>
+        </section>
+      </main>
+      <footer>Christina Labay 2019</footer>
+    </body>
 </html>
