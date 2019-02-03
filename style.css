@@ -1,94 +1,138 @@
-body *{
-    box-sizing:border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  html{
-    background: url('Assets/beer-background.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color: white;
-  }
-  h1, h2, .quizBegin{
-    text-align:center;
-    color:#001A57;
-  }
-  .quiz input{
-    text-align:left;
-  }
-  .quiz{
-    text-align:center;
-  }
-  .js-answer-img{
-    width:40%;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:10px;
-    border-radius: 3px;
-    border: 2px solid #195420; 
-  }
-  button{
-    font-size:30px;
-    border-radius:5%;
-    border:solid #001A57;
-    background-color:#001A57;
-    color:white;
-  }
-  button:hover{
-    cursor: pointer;
-  }
-  .quiz-tracker{
-    text-align:left;
-  }
-  legend{
-    font-size:25px;
-    font-weight: 550;
-    text-align:center;
-  }
-  .submit{
-    margin: 20px;
-  }
-  .quiz p{
-    text-align:center;
-    color:#001A57; 
-    font-size:24pt;
-    font-weight: 600; 
-  }
-  .quiz-tracker p{
-    font-size:12pt;
-  }
-  input{
-    opacity: 1;
-  }
-  fieldset{
-    text-align:left;
-    border:none;
-    font-size:12pt;
-    color:#195420;
-  }
-  .quiz, header, .quizBegin{
-    background-color:rgba(255, 255, 255, 0.6); 
-    padding: 10px;
-  }
+*{
+    box-sizing: border-box;
+    font-family: 'Abel', sans-serif;
+}
+body{
+  margin:0px;
 
-  @media screen and (min-width: 320px){
-    .quiz input{
-      margin-left:15%;
-    }
-  }
+}
+.navigation{
+    background-color:lightgrey;
+    text-align: right;
+    position:relative;
+    font-family:sans-serif;
+}
+.greeting{
+    padding-top:10px;
+    margin-top:0;
+    font-family: 'vibur', cursive;
+    font-size: 75px;
+    margin-left:6%; 
+    position:absolute;
+    color:#FFDB58;
+}
+.headline{
+    padding-top:100px;
+    max-width:30%;
+    margin-left:8%; 
+    margin-right:5%;
+    position:relative;
+    font-size:20px;
+    font-weight:bold;
+    color:navy;
+}
+.bio{
+    padding-top:30px;
+    margin-top:20px;
+    padding-left:11%;
+    padding-right:11%;
+    text-align:left;
+    font-size:19px;
+    max-width:90%;
+}
+.projects{
+    padding-top:13%;
+}
+header{
+    margin-top:0;
+    position:relative;
+}
+.headshot{
+  width:45%;
+  max-width:300px;
+  float:right;
+  border-radius:50%;
+  border: 2px solid black;
+  margin-right:10px;
+}
+.bio-text{
+  padding-right:15%;
+  color:navy;
+}
+.project-img{
+  width:90%;
+  padding-bottom:5px;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  max-height:500px;
+}
+.contact{
+  font-size:18px;
+  padding:5px;
+}
+footer{
+  margin-top:10px;
+  text-align:center;
+  font-size: 12px;
+}
+nav ul{ 
+  display:inline-block;
+  list-style: none;  
+}
+li{
+  display:inline-block;
+  padding-right:5px;
+}
+a{
+  font-family: 'Abel', sans-serif;
+  text-decoration: none;
+  color:navy;
+}
+nav a:hover{
+  color:#FFDB58;
+}
+.proj-link:hover{
+  color:#FFDB58;
+}
+span{
+  font-weight: bold;
+}
+.project-text{
+  margin-left:5%;
+  margin-right:5%;
+  text-indent:40px;
+  font-size: 20px;
+}
+.proj-link{
+  margin-right:10px;
+  margin-left:10%;
+  font-size: 20px;
+}
+.github, .linkedin{
+  height:25px;
+  display:inline-block;
+  padding-top:5px;
+}
+.contact-text{
+  display:inline-block;
+  margin-left:5%;
+  font-size:20px;
+}
+.section-title{
+  font-size:24px;
+  padding-left:10px;
+  color: black;
+}
+.contact-title{
+  margin-bottom:-5px;
+}
 
-  @media screen and (min-width: 500px){
-    fieldset{
-      font-size:18pt;
-    }
-    .quiz-tracker p{
-      font-size:18pt;
-    }
-    .quiz-tracker{
-      display:flex;
-      flex-direction:row;
-      justify-content:space-evenly;
-    }
+@media screen and (min-width: 700px){
+   .greeting{
+    font-size:150px;
   }
+  .headline{
+    padding-top:200px;
+  }
+}
